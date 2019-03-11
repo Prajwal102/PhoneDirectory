@@ -1,5 +1,6 @@
 import React,{ Component } from "react";
-// import './List.css';
+import './List.css';
+
 
 class Entry extends Component{
     constructor(props)
@@ -19,9 +20,14 @@ class Entry extends Component{
             <li>
            {this.props.entry.name} <br />
             {this.props.entry.phone} 
-           
-           
-            <button className="del" type="button" onClick={this.close}>DELETE</button>
+            <div>
+            <button
+             className="del"
+             type="button"
+             onClick={this.close}
+             >DELETE
+             </button>
+             </div>
             </li>
             </div>
     );
@@ -32,12 +38,19 @@ class Entry extends Component{
 const List = (props) => {
     const entrydata = props.entries.map((entry,index) => {
         return (
-            <Entry entry={entry} key={entry.id} index={entry.id} remove_entry={props.remove_entry} />
+            <Entry
+             entry={entry}
+             key={entry.id}
+             index={entry.id}
+             remove_entry={props.remove_entry}
+              />
         );
     });
     return (
   
-           <ul> {entrydata} </ul>
+           <ul className="outer">
+            {entrydata}
+             </ul>
 
         
     );

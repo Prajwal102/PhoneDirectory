@@ -1,5 +1,29 @@
-ul {
-    position: absolute;
-    right:4px;
+.list li {
+    background-color:white;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style:none;
+    font-size:20px;
+
 }
 
+.outer {
+    /* border: 1px solid black; */
+    width:500px;
+    position:relative;
+    /* margin-left:500px;
+    margin-top:-170px; */
+    left:500px;
+    top:120px;
+    padding:0px;
+    /* top:100px; */
+}
+
+.list li button {
+    position:absolute;
+    margin-top:-40px;
+    margin-left:380px;
+    width:83px;
+    font-size:10px;
+}

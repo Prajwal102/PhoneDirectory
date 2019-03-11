@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import "./Input.css";
 import List from './List';
 
+
+
 window.id=0;
  class Input extends Component {
      constructor() {
@@ -19,8 +21,9 @@ window.id=0;
      };
      onSubmit = e => {
          e.preventDefault();
-         if(this.state.name!=="" && this.state.phone!=="")
+         if(this.state.name!=="" && this.state.phone.length===10)
          {
+             console.log(this.state.phone.length);
          const UserData = {
              name: this.state.name,
              phone: this.state.phone,
@@ -36,6 +39,7 @@ window.id=0;
                  info
              };
          });
+         return true;
 
         }
      };
@@ -43,7 +47,7 @@ window.id=0;
      handleRemove = id => {
         this.setState(state => {
           const info = state.info.filter(entry => entry.id !== id);
-    
+
           return {
             info,
           };
@@ -55,7 +59,7 @@ window.id=0;
     {
     return (
         <div className="detail-input">
-        <form onSubmit={this.onSubmit}>
+         <form action="/" onSubmit={this.onSubmit}>
 
             <input 
             placeholder="Name"
@@ -64,7 +68,6 @@ window.id=0;
             type="text"
             value={this.state.name}
             />
-            
             <br />
             
             <input
@@ -75,23 +78,19 @@ window.id=0;
             value={this.state.phone}
             />
             <br />
-            <button type="submit">ADD</button>
+            <button type="submit">ADD</button> 
+            
         </form>
+        Name: {this.state.name}
+        <br />
+        Phone: {this.state.phone}
         <List entries={this.state.info} remove_entry={this.handleRemove}/>
         
-
-     
         </div>
             
-        
-        
-        
-      
-    
           
           
     )
-
     
 }
 
