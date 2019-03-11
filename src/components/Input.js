@@ -81,9 +81,9 @@ window.id=0;
             <button type="submit">ADD</button> 
             
         </form>
-        Name: {this.state.name}
-        <br />
-        Phone: {this.state.phone}
+//         Name: {this.state.name}
+//         <br />
+//         Phone: {this.state.phone}
         <List entries={this.state.info} remove_entry={this.handleRemove}/>
         
         </div>
